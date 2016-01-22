@@ -1,0 +1,26 @@
+{
+    "name": "Colourful Google Search",
+    "description": "Set a background image to the google search page",
+    "version": "0.1",
+ "chrome_url_overrides": {
+    "newtab": "googlepage.html"
+  },
+    "permissions": [
+    "tabs","https://www.google.co.in"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+
+    "content_scripts": [
+        {
+        "matches": [
+           "https://www.google.co.in/"
+            ],
+        "js": ["code.js"],
+        "run_at": "document_end"         
+        }
+    ], 
+    "manifest_version":2,
+"web_accessible_resources" :["icon.png"]
+}
